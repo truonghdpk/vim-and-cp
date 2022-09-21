@@ -34,7 +34,9 @@ function! TermWrapper(command) abort
 endfunction
 
 command! -nargs=0 CompileAndRun call TermWrapper(printf('g++ -std=c++11 %s && ./a.out', expand('%')))
+command! -nargs=0 CP call TermWrapper(printf('g++ -std=c++11 %s && ./a.out', expand('%')))
 command! -nargs=1 -complete=file CompileAndRunWithFile call TermWrapper(printf('g++ -std=c++11 %s && ./a.out < %s', expand('%'), <q-args>))
+command! -nargs=1 -complete=file CPWF call TermWrapper(printf('g++ -std=c++11 %s && ./a.out < %s', expand('%'), <q-args>))
 autocmd FileType cpp nnoremap <leader>fw :CompileAndRun<CR>
 
 " For those of you that like to use the default ./a.out
