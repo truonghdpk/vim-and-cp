@@ -25,3 +25,4 @@ tnoremap <Esc> <C-\><C-n>
 let mapleader=" "
 
 source ~/.config/nvim/cocrc.vim
+source ~/.config/nvim/cp.vim
